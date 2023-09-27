@@ -1,4 +1,6 @@
-﻿ $menu = Read-Host "
+while ($menu -ne "x"){
+Clear-Host
+ $menu = Read-Host "
  ********************************************
  a) Crear una carpeta. 
  b)Crear un fichero nuevo.
@@ -38,6 +40,16 @@ Test-Path $verificar
 }
 
 {$_ -eq "f"}
-{$contenido = Read-Host ""
+{$contenido = Read-Host "Introduce la ruta de la carpeta que quieres ver el contenido"
+Get-ChildItem $contenido
+ }
+ {$_ -eq "g"}
+{
+Get-Date
+ }
+ {$_ -eq "x"}
+{
+Write-Host "Has salido"
+ }
  }
  }
