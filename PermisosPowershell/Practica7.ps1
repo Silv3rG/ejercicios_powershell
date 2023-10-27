@@ -27,7 +27,7 @@ $aclEMP | Set-Acl -Path C:\empresa_users\"$($emp.nombre).$($emp.apellido)"
 #PRACTICA 7 añado un if para que monte el perfil movil solo a los que pertenecen al grupo personal.
 if($emp.departamento -eq "PERSONAL"){
 Set-ADUser -Identity "$($emp.nombre).$($emp.apellido)" -ScriptPath "carpetas$($emp.departamento).bat" -HomeDrive "Z:" -HomeDirectory "\\EMPRESA-DC1\empresa_users$\$($emp.nombre).$($emp.apellido)" -ProfilePath "\\EMPRESA-DC1\empresa_users$\$($emp.nombre).$($emp.apellido)"
-}Else{
+}else{
 Set-ADUser -Identity "$($emp.nombre).$($emp.apellido)" -ScriptPath "carpetas$($emp.departamento).bat" -HomeDrive "Z:" -HomeDirectory "\\EMPRESA-DC1\empresa_users$\$($emp.nombre).$($emp.apellido)"
 }
 
